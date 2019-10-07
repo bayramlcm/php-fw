@@ -8,4 +8,5 @@ define('ROOT', __DIR__.DS);
 define('APP', ROOT.'app'.DS);
 define('SYSTEM', ROOT.'system'.DS);
 
-include SYSTEM.'init.php';
+include_once SYSTEM.'init.php';
+include_once APP.'init.php';

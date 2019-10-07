@@ -12,8 +12,8 @@ class Router {
 
   function route($methods, $route, $callback) {
     $methods = is_array($methods) ? $methods : [$methods];
-    if (in_array($methods, $_SERVER['REQUEST_METHOD'])) {
-      if (trim('/', $route) == self::$url) {
+    if (in_array($_SERVER['REQUEST_METHOD'], $methods)) {
+      if (trim($route, '/') === self::$url) {
         call_user_func($callback);
         return true;
       }
