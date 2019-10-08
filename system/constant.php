@@ -1,4 +1,4 @@
 <?php
-define('CONTROLLER', APP.'controller');
-define('MODEL', APP.'model');
-define('VIEW', APP.'view');
+define('CONTROLLER', APPPATH.'controller'.DS);
+define('MODEL', APPPATH.'model'.DS);
+define('VIEW', APPPATH.'view'.DS);
