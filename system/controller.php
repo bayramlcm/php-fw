@@ -4,6 +4,7 @@
  */
 class Controller {
 
+  // NOTE: Controller ı kontrol et ve çalıştır
   private function checkFile($files) {
     if (count($files) > 0) {
       foreach ($files as $file) {
@@ -15,6 +16,7 @@ class Controller {
     }
   }
 
+  // NOTE: Controller ı tara
   private function searchFiles($route, $method=Null) {
     $files = [];
     $routeParse = explode('/', $route);
@@ -25,7 +27,7 @@ class Controller {
         $files[] = [
           'file' => $path . '.php',
           'method' => $filename,
-          'class' => self::getClass(end($routeParse)),
+          'class' => Basic::getClass(end($routeParse)),
         ];
       }
     }
@@ -33,15 +35,10 @@ class Controller {
       $files[] = [
         'file' => $path . DS . $filename . '.php',
         'method' => empty($method) ? 'index' : $method,
-        'class' => self::getClass($filename),
+        'class' => Basic::getClass($filename),
       ];
     }
     return array_reverse($files);
-  }
-
-  private function getClass($route) {
-    $class = explode('/', $route);
-    return ucfirst(end($class));
   }
 
   // NOTE: Controller Çalıştır
