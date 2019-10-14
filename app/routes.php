@@ -2,6 +2,6 @@
 
 Router::route('GET', '/', 'home');
 
-Router::route('GET', '/emre');
+Router::route('GET', '/admin/login');
 
 Router::route('GET', '/logout');
