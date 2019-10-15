@@ -1,6 +1,12 @@
-<?php defined('SECRET') OR exit('Erişiminiz engellendi!');
+<?php
 class Home extends Controller {
   function index() {
-    echo "?";
+    $this->loadModel('Users');
+    $data = [
+      'username' => 'Hidayet',
+      'title' => 'Anasayfa',
+      'users' => $this->Users->getAll(),
+    ];
+    $this->loadView('home', $data);
   }
 }

@@ -8,5 +8,5 @@ define('ROOT', __DIR__.DS);
 define('APPPATH', ROOT.'app'.DS);
 define('SYSTEMPATH', ROOT.'system'.DS);
 
-include_once SYSTEMPATH.'init.php';
-include_once APPPATH.'init.php';
+include SYSTEMPATH . 'init.php';
+include APPPATH . 'init.php';
