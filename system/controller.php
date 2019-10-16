@@ -1,18 +1,21 @@
 <?php
-/**
- * Controller
- */
 class Controller {
 
-  private function getClass($route) {
-    $class = explode('/', $route);
-    return ucfirst(end($class));
+  // NOTE: Model Yükle
+  protected function loadModel($name) {
+    include_once Constant::MODEL . $name . '.php';
+    $this->$name = new $name();
   }
 
-  // NOTE: Controller Çalıştır
-  public function run($route, $loadMethod) {
-    include_once CONTROLLER."{$route}.php";
-    call_user_func(self::getClass($route).'::'.$loadMethod);
+  // NOTE: View Yükle
+  protected function loadView($name, $vars=[]) {
+    restore_include_path();
+    extract(
+      (array) $vars
+      // compact((array) $vars)
+    );
+    include_once Constant::VIEW . $name . '.php';
   }
+
 
 }

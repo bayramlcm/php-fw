@@ -1,4 +1,7 @@
 <?php
-define('CONTROLLER', APPPATH.'controller'.DS);
-define('MODEL', APPPATH.'model'.DS);
-define('VIEW', APPPATH.'view'.DS);
+class Constant {
+  public const CONTROLLLER = APPPATH . 'controller' . DS;
+  public const MODEL = APPPATH . 'model' . DS;
+  public const VIEW = APPPATH . 'view' . DS;
+  public const MODULES = SYSTEMPATH . 'modules' . DS;
+}
