@@ -4,6 +4,7 @@ class Controller {
   protected $Module;
 
   function __construct() {
+    // NOTE: Modülü yükle
     $this->Module = new Module(App::$appModules);
   }
 

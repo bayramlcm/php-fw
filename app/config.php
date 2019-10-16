@@ -1,7 +1,8 @@
 <?php
-App::addModule(
-  ['mysql']
-);
+// NOTE: İstenen modüller
+// App::addModule(
+//   ['mysql']
+// );
 
 App::setConfig(
   [
@@ -9,7 +10,7 @@ App::setConfig(
       'host' => 'localhost',
       'user' => 'root',
       'pass' => '',
-      'db' => '',
+      'db' => 'film',
     ],
   ]
 );

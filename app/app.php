@@ -6,7 +6,7 @@ class App extends System {
   // NOTE: Tüm Modüller
   public static $appModules = [];
   // NOTE: Tüm Ayarlar
-  private static $appConfig = [];
+  public static $appConfig = [];
   // NOTE: Gelen URL
   public static $appUrl = '';
 
