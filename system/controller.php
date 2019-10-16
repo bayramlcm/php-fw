@@ -1,6 +1,12 @@
 <?php
 class Controller {
 
+  protected $Module;
+
+  function __construct() {
+    $this->Module = new Module(App::$appModules);
+  }
+
   // NOTE: Model Yükle
   protected function loadModel($name) {
     include_once Constant::MODELPATH . $name . '.php';

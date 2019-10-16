@@ -4,7 +4,7 @@ class App extends System {
   // NOTE: Tüm Routelar
   private static $appRoutes = [];
   // NOTE: Tüm Modüller
-  private static $appModules = [];
+  public static $appModules = [];
   // NOTE: Tüm Ayarlar
   private static $appConfig = [];
   // NOTE: Gelen URL
@@ -33,15 +33,15 @@ class App extends System {
   // NOTE: App'i çalıştır
   public static function run($appUrl='/') {
     self::$appUrl = $appUrl;
-    self::Module();
+    // NOTE: Route'ları çalıştır
     foreach (self::$appRoutes as $appRoute) {
       // NOTE: Route'u bulursa sonlandır
       if (self::Router($appRoute)) {
-        exit;
+        // exit;
         break;
       }
     }
-    self::page404();
+    // self::page404();
   }
 
   public static function page404() {

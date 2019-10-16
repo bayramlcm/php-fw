@@ -8,9 +8,4 @@ class System {
     return Router::route($route);
   }
 
-  // NOTE: Modül Yükle
-  protected static function Module() {
-    return Module::run();
-  }
-
 }
