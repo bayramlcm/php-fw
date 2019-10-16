@@ -18,7 +18,7 @@ class Router {
     $files = [];
     $routeParse = explode('/', $route);
     $filename = array_pop($routeParse);
-    $path = Constant::CONTROLLLER . implode(DS, $routeParse);
+    $path = Constant::CONTROLLLERPATH . implode(DS, $routeParse);
     if (count($routeParse) > 0 && empty($method)) {
       if (file_exists($path . '.php')) {
         $files[] = [
@@ -60,7 +60,7 @@ class Router {
     $route['controller'] = empty($route['controller']) ? Null : trim($route['controller'], '/');
     $route['controllerMethod'] = empty($route['controllerMethod']) ? Null : $route['controllerMethod'];
     if (in_array($_SERVER['REQUEST_METHOD'], $route['methods'])) {
-      if ($route['path'] == App::$url) {
+      if ($route['path'] == App::$appUrl) {
         // NOTE: Controller ı başlat
         return self::run(
           empty($route['controller']) ? $route['path'] : $route['controller'],

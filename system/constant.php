@@ -1,7 +1,7 @@
 <?php
 class Constant {
-  public const CONTROLLLER = APPPATH . 'controller' . DS;
-  public const MODEL = APPPATH . 'model' . DS;
-  public const VIEW = APPPATH . 'view' . DS;
-  public const MODULES = SYSTEMPATH . 'modules' . DS;
+  public const CONTROLLLERPATH = APPPATH . 'controller' . DS;
+  public const MODELPATH = APPPATH . 'model' . DS;
+  public const VIEWPATH = APPPATH . 'view' . DS;
+  public const MODULEPATH = SYSTEMPATH . 'module' . DS;
 }

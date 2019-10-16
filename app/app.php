@@ -3,8 +3,12 @@ class App extends System {
 
   // NOTE: Tüm Routelar
   private static $appRoutes = [];
+  // NOTE: Tüm Modüller
+  private static $appModules = [];
+  // NOTE: Tüm Ayarlar
+  private static $appConfig = [];
   // NOTE: Gelen URL
-  public static $url = '';
+  public static $appUrl = '';
 
   // NOTE: Tüm route'ları ekle
   public static function addRoute($method, $path, $controller) {
@@ -15,9 +19,21 @@ class App extends System {
     ];
   }
 
+  // NOTE: Modül Yükle
+  public static function addModule($appModule = []) {
+    $appModule = is_array($appModule) ? $appModule : [$appModule];
+    self::$appModules = array_merge(self::$appModules, $appModule);
+  }
+
+  // NOTE: Ayarları yükle
+  public static function setConfig($appConfig) {
+    self::$appConfig = $appConfig;
+  }
+
   // NOTE: App'i çalıştır
-  public static function run($url='/') {
-    self::$url = $url;
+  public static function run($appUrl='/') {
+    self::$appUrl = $appUrl;
+    self::Module();
     foreach (self::$appRoutes as $appRoute) {
       // NOTE: Route'u bulursa sonlandır
       if (self::Router($appRoute)) {

@@ -3,7 +3,7 @@ class Controller {
 
   // NOTE: Model Yükle
   protected function loadModel($name) {
-    include_once Constant::MODEL . $name . '.php';
+    include_once Constant::MODELPATH . $name . '.php';
     $this->$name = new $name();
   }
 
@@ -14,7 +14,7 @@ class Controller {
       (array) $vars
       // compact((array) $vars)
     );
-    include_once Constant::VIEW . $name . '.php';
+    include_once Constant::VIEWPATH . $name . '.php';
   }
 
 
