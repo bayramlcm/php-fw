@@ -37,15 +37,15 @@ class App extends System {
     foreach (self::$appRoutes as $appRoute) {
       // NOTE: Route'u bulursa sonlandır
       if (self::Router($appRoute)) {
-        // exit;
+        exit;
         break;
       }
     }
-    // self::page404();
+    self::page404();
   }
 
   public static function page404() {
-    echo '404 not pages!';
+    echo '404 not page!';
     exit;
   }
 

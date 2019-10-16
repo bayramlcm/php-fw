@@ -8,6 +8,5 @@ class Home extends Controller {
       'users' => $this->Users->getAll(),
     ];
     $this->loadView('home', $data);
-    $this->Module->Mysql->test();
   }
 }
